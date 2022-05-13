@@ -1,8 +1,15 @@
+import React from "react";
+import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import UserApp from "./components/users/userApp";
+
+
+
 function App() {
   return (
-    <>
-      پروژه ری اکت فارسی
-    </>
+    <div className="App" dir="rtl">
+      <UserApp />
+    </div>
   );
 }
 

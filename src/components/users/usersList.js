@@ -1,6 +1,7 @@
 import Table from "react-bootstrap/Table";
 import UserItem from "./userItem";
 
+
 let usersListItem = [
   {
     id: 1,
@@ -16,10 +17,21 @@ let usersListItem = [
     regDate: "1376",
     user_Role: "کاربری",
   },
+
+  {
+        id:3,
+        fullName: "علی احمدی",
+        userName: "ahmadi1400",
+        regDate: "1399",
+        user_Role: "فروشنده",
+      },
+
+
 ];
 
 export default function UsersList() {
   return (
+      
     <div className="mt-2">
       <Table striped bordered hover>
         <thead>
@@ -34,8 +46,11 @@ export default function UsersList() {
         </thead>
         <tbody>
           {usersListItem.map((user) => (<UserItem person={user} />))}
+         
         </tbody>
       </Table>
     </div>
   );
+
+
 }

@@ -6,6 +6,27 @@
   font-display: swap;
 }
 
+
+.ModalfarsiFont{
+  font-family: Vazirmatn !important;
+  font-variation-settings: "wght" 400 !important;
+}
+
+.modal-header .btn-close {
+  margin: -.5rem 18.5rem -.5rem auto !important;
+}
+
+.modal-header {
+  font-weight: 200 !important;
+}
+
+
+.form-select{
+  font-family: Vazirmatn !important;
+  background-position: left .75rem center !important;
+}
+
+
 .App {
   font-family: Vazirmatn;
   font-variation-settings: "wght" 400;

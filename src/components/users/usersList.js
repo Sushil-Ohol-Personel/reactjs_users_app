@@ -2,41 +2,21 @@ import Table from "react-bootstrap/Table";
 import UserItem from "./userItem";
 
 
-let usersListItem = [
-  {
-    id: 1,
-    fullName: "عطا ",
-    userName: " ata bahari",
-    regDate: "1374",
-    user_Role: "مدیر",
-  },
-  {
-    id: 2,
-    fullName: "حسام موسوی ",
-    userName: "Hesam Mousavi",
-    regDate: "1376",
-    user_Role: "کاربری",
-  },
-
-  {
-        id:3,
-        fullName: "علی احمدی",
-        userName: "ahmadi1400",
-        regDate: "1399",
-        user_Role: "فروشنده",
-      },
+//getting userList From localStorage
+const userListData = localStorage.getItem('users');
+const usersListItem =  JSON.parse(userListData);
 
 
-];
+
 
 export default function UsersList() {
+
   return (
-      
+    <>
     <div className="mt-2">
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>#</th>
             <th>نام نام خانوادگی</th>
             <th>نام کاربری</th>
             <th>زمان عضویت</th>
@@ -45,12 +25,15 @@ export default function UsersList() {
           </tr>
         </thead>
         <tbody>
-          {usersListItem.map((user) => (<UserItem person={user} />))}
+          { usersListItem.length
+             ? usersListItem.map((users) => (<UserItem user={users} />))
+             :  <th colspan="6" className="my-2" > اطلاعاتی جهت نمایش وجود ندارد - به روی اضافه کردن کلیک کنید  </th> 
+           }
          
         </tbody>
       </Table>
     </div>
+    </>
   );
-
 
 }

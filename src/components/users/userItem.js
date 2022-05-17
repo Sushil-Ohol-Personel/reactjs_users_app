@@ -1,13 +1,12 @@
-export default function UserItem({ person }) {
+export default function UserItem({ user  }) {
         return (
-          <tr key={person.id}>
-            <td>{person.id}</td>
-            <td>{person.fullName}</td>
-            <td>{person.userName}</td>
-            <td>{person.regDate}</td>
-            <td>{person.user_Role}</td>
+          <tr key={user.id}>
+            <td>{user.fullName}</td>
+            <td>{user.userName}</td>
+            <td>{user.phoneNumber}</td>
+            <td>{user.userType}</td>
             <td>
-              <a href=""> ویرایش </a> |<a href=""> حذف</a>
+              <a href="rookcet.ir"> ویرایش </a> |<a> حذف</a>
             </td>
           </tr>
         );

@@ -3,13 +3,7 @@ import UserItem from "./userItem";
 
 
 //getting userList From localStorage
-const userListData = localStorage.getItem('users');
-const usersListItem =  JSON.parse(userListData);
-
-
-
-
-export default function UsersList() {
+export default function UsersList({users}) {
 
   return (
     <>
@@ -25,12 +19,11 @@ export default function UsersList() {
           </tr>
         </thead>
         <tbody>
-          { usersListItem.length
-             ? usersListItem.map((users) => (<UserItem user={users} />))
-             :  <th colspan="6" className="my-2" > اطلاعاتی جهت نمایش وجود ندارد - به روی اضافه کردن کلیک کنید  </th> 
-           }
-         
+          {users.map((user) => (<UserItem key={user.id} {...user} />))}
         </tbody>
+        <tfoot>
+          {!users.length ? <tr><td colSpan="6" className="my-2" >اطلاعاتی جهت نمایش وجود ندارد - به روی اضافه کردن کلیک کنید</td></tr> : null}
+        </tfoot>
       </Table>
     </div>
     </>

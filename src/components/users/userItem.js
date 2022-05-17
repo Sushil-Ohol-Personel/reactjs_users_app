@@ -1,14 +1,14 @@
-export default function UserItem({ user  }) {
-        return (
-          <tr key={user.id}>
-            <td>{user.fullName}</td>
-            <td>{user.userName}</td>
-            <td>{user.phoneNumber}</td>
-            <td>{user.userType}</td>
-            <td>
-              <a href="rookcet.ir"> ویرایش </a> |<a> حذف</a>
-            </td>
-          </tr>
-        );
-      }
+export default function UserItem({fullName, userName, phoneNumber, userType}) {
+  return (
+    <tr>
+      <td>{fullName}</td>
+      <td>{userName}</td>
+      <td>{phoneNumber}</td>
+      <td>{userType === 0 ? 'عضو' : 'مدیر'}</td>
+      <td>
+        <a href="rookcet.ir"> ویرایش </a> | <a> حذف</a>
+      </td>
+    </tr>
+  );
+}
       

@@ -19,7 +19,7 @@ export default function UsersList() {
           <tr>
             <th>نام نام خانوادگی</th>
             <th>نام کاربری</th>
-            <th>زمان عضویت</th>
+            <th>موبایل</th>
             <th>نوع کاربری</th>
             <th>عملیات</th>
           </tr>
@@ -27,7 +27,7 @@ export default function UsersList() {
         <tbody>
           { usersListItem.length
              ? usersListItem.map((users) => (<UserItem user={users} />))
-             :  <th colspan="6" className="my-2" > اطلاعاتی جهت نمایش وجود ندارد - به روی اضافه کردن کلیک کنید  </th> 
+             :  <th  className="my-2" > اطلاعاتی جهت نمایش وجود ندارد - به روی اضافه کردن کلیک کنید  </th> 
            }
          
         </tbody>

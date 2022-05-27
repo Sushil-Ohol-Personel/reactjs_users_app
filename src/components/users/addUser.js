@@ -2,7 +2,7 @@ import Modal from "react-bootstrap/Modal";
 import React, { useState } from "react";
 import { Button, Form, Col, Row } from "react-bootstrap";
 import axios from "axios";
-import BasicToast  from "./Library/ToastMessage";
+import BasicToast from "../Library/ToastMessage";
 import { toast } from "react-toastify";
 
 export function generateUUID(digits) {
@@ -48,21 +48,15 @@ export default function AddUserByModal({ setUsers }) {
 
     setUsers((prevUsers) => [{ ...data, id: id }, ...prevUsers]);
 
-
-
     handleClose();
 
-    
     if (res) {
       toast.dismiss();
       toast.success("با موفقیت اضافه شد");
-
     } else {
       toast.dismiss();
       toast.error("خطا در اتصال به اینترنت یا سیستم ");
     }
-
-
   };
 
   return (

@@ -1,7 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-
 export default function deleteUser(userid) {
   try {
     let res = axios.delete(

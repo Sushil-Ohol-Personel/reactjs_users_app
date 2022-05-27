@@ -8,8 +8,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../../App.css";
 import { toast, ToastContainer } from "react-toastify";
 
-
-
 export default function UserApp() {
   const [users, setUsers] = useState([]);
 
@@ -26,19 +24,16 @@ export default function UserApp() {
 
   return (
     <div className="App" dir="rtl">
-    <Container>
-      <Row>
-        <Col>
-          <Header />
-          <AddUser setUsers={setUsers} />
-          <UsersList users={users} />
-        </Col>
-      </Row>
-      <ToastContainer closeButton={false} position="bottom-right" />
-
-    </Container>
+      <Container>
+        <Row>
+          <Col>
+            <Header />
+            <AddUser setUsers={setUsers} />
+            <UsersList users={users} />
+          </Col>
+        </Row>
+        <ToastContainer closeButton={false} position="bottom-right" />
+      </Container>
     </div>
   );
 }
-
-

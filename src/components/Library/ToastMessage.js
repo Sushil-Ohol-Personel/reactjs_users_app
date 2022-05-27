@@ -3,7 +3,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 class BasicToast extends Component {
   constructor() {
-    super()
+    super();
   }
 }
 

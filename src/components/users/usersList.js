@@ -1,8 +1,8 @@
 import Table from "react-bootstrap/Table";
-import UserItem from "./UserItem";
+import UserItem from "./userItem";
 
 //getting userList From localStorage
-export default function UsersList({ users }) {
+export default function UsersList({ users, setUsers }) {
   return (
     <>
       <div className="mt-2">
@@ -18,7 +18,7 @@ export default function UsersList({ users }) {
           </thead>
           <tbody>
             {users.map((user) => (
-              <UserItem key={user.id} {...user} />
+              <UserItem key={user.id} user={user} setUsers={setUsers} />
             ))}
           </tbody>
           <tfoot>

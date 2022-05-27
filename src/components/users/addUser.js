@@ -21,10 +21,10 @@ export default function AddUserByModal({ setUsers }) {
   const handleShow = () => setShow(true);
 
   //make unique id
-  const id = generateUUID(5);
+  // const id = generateUUID(5);
 
   const [data, setData] = useState({
-    id,
+    // id,
     fullName: "",
     userName: "",
     phoneNumber: "",
@@ -46,7 +46,7 @@ export default function AddUserByModal({ setUsers }) {
       }
     );
 
-    setUsers((prevUsers) => [{ ...data, id: id }, ...prevUsers]);
+    setUsers((prevUsers) => [...prevUsers, res.data]);
 
     handleClose();
 

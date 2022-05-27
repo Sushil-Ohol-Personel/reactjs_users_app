@@ -1,7 +1,18 @@
 import React from "react";
 import deleteUser from './DeleteUser'
+import { toast } from "react-toastify";
 
-export default function UserItem(user) {
+export default function UserItem({user,setUsers}) {
+  function handleDelete(){
+    deleteUser(user.id).then(res=>{
+      setUsers((prevUsers) => prevUsers.filter((item) => item.id !== user.id));
+      toast.dismiss();
+      toast.success("با موفقیت حذف شد ");
+    }).catch(err=>{
+      toast.dismiss();
+      toast.error("error.response.data.status ");
+    })
+  }
   return (
     <tr>
       <td>{user.fullName}</td>
@@ -12,7 +23,7 @@ export default function UserItem(user) {
         <button className={"btn btn-primary btn-sm m-1"}>ویرایش</button>
         <button
           className={"btn btn-danger btn-sm m-1"}
-          onClick={deleteUser.bind(this, user.id)}
+          onClick={handleDelete}
         >
           حذف
         </button>

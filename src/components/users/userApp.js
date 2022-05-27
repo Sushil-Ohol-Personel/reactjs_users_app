@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Col, Row, Container } from "react-bootstrap";
-import UsersList from "./UsersList";
+import UsersList from "./usersList";
 import Header from "../Layout/Header";
-import AddUser from "./AddUser";
+import AddUser from "./addUser";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../App.css";
@@ -29,7 +29,7 @@ export default function UserApp() {
           <Col>
             <Header />
             <AddUser setUsers={setUsers} />
-            <UsersList users={users} />
+            <UsersList users={users} setUsers={setUsers} />
           </Col>
         </Row>
         <ToastContainer closeButton={false} position="bottom-right" />

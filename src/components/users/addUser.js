@@ -2,7 +2,7 @@ import Modal from "react-bootstrap/Modal";
 import React, { useState } from "react";
 import { Button, Form, Col, Row } from "react-bootstrap";
 import axios from "axios";
-import BasicToast  from "./ToastMessage";
+import BasicToast  from "./Library/ToastMessage";
 import { toast } from "react-toastify";
 
 export function generateUUID(digits) {

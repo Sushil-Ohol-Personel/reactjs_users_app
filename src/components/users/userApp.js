@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import UsersList from "./UsersList";
-import Header from "./Header";
+import Header from "../Layout/Header";
 import AddUser from "./AddUser";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";

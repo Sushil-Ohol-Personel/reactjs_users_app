@@ -1,17 +1,22 @@
+import React from "react";
+import deleteUser from './DeleteUser'
 
-
-
-export default function UserItem({id,fullName, userName, phoneNumber, userType}) {
+export default function UserItem(user) {
   return (
     <tr>
-      <td>{fullName}</td>
-      <td>{userName}</td>
-      <td>{phoneNumber}</td>
-      <td>{userType}</td>
+      <td>{user.fullName}</td>
+      <td>{user.userName}</td>
+      <td>{user.phoneNumber}</td>
+      <td>{user.userType}</td>
       <td>
-        <a href="rookcet.ir"> ویرایش </a> | <a href={id} > حذف</a>
+        <button className={"btn btn-primary btn-sm m-1"}>ویرایش</button>
+        <button
+          className={"btn btn-danger btn-sm m-1"}
+          onClick={deleteUser.bind(this, user.id)}
+        >
+          حذف
+        </button>
       </td>
     </tr>
   );
 }
-      
